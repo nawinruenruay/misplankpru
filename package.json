@@ -1,0 +1,43 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@mantine/core": "^8.2.5",
+    "@mantine/dates": "^8.2.5",
+    "@mantine/form": "^8.2.5",
+    "@mantine/hooks": "^8.2.5",
+    "@mantine/modals": "^8.2.5",
+    "@mantine/notifications": "^8.2.5",
+    "@tabler/icons-react": "^3.34.1",
+    "axios": "^1.11.0",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
+    "mantine-datatable": "^8.2.0",
+    "next": "15.5.0",
+    "nextjs-toploader": "^3.8.16",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "sweetalert2": "^11.22.4"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.0",
+    "postcss": "^8.5.6",
+    "postcss-preset-mantine": "^1.18.0",
+    "postcss-simple-vars": "^7.0.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
