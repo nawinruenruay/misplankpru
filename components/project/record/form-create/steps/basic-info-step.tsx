@@ -33,7 +33,7 @@ export const BasicInfoStep: React.FC<BasicInfoStepProps> = ({ form }) => {
         label="ประเภทโครงการ"
         placeholder="เลือกประเภทโครงการ"
         data={[
-          { value: "development", label: "โครงการพัฒนา" },
+          { value: "development", label: "โครงการพัฒนาkkkkkk" },
           { value: "maintenance", label: "โครงการบำรุงรักษา" },
           { value: "research", label: "โครงการวิจัย" },
           { value: "other", label: "อื่นๆ" },
