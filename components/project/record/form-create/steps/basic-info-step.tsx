@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { TextInput, Textarea, Select, NumberInput } from "@mantine/core";
+import { TextInput, Textarea, Select, NumberInput, Grid } from "@mantine/core";
 import { UseFormReturnType } from "@mantine/form";
 
 interface BasicInfoStepProps {
@@ -11,12 +11,90 @@ interface BasicInfoStepProps {
 export const BasicInfoStep: React.FC<BasicInfoStepProps> = ({ form }) => {
   return (
     <div className="space-y-4">
-      <TextInput
-        label="ชื่อโครงการ"
-        placeholder="กรอกชื่อโครงการ"
-        {...form.getInputProps("projectName")}
+      <Select
+        allowDeselect={false}
+        clearable
+        checkIconPosition="right"
+        label="แผนงาน"
+        placeholder="เลือกแผนงาน"
+        data={[
+          { value: "development", label: "โครงการพัฒนา" },
+          { value: "maintenance", label: "โครงการบำรุงรักษา" },
+          { value: "research", label: "โครงการวิจัย" },
+          { value: "other", label: "อื่นๆ" },
+        ]}
+        {...form.getInputProps("projectType")}
         required
       />
+      
+      <Select
+        allowDeselect={false}
+        clearable
+        checkIconPosition="right"
+        label="ผลผลิต"
+        placeholder="เลือกผลผลิต"
+        data={[
+          { value: "development", label: "โครงการพัฒนา" },
+          { value: "maintenance", label: "โครงการบำรุงรักษา" },
+          { value: "research", label: "โครงการวิจัย" },
+          { value: "other", label: "อื่นๆ" },
+        ]}
+        {...form.getInputProps("projectType")}
+        required
+      />
+
+      <Select
+        allowDeselect={false}
+        clearable
+        checkIconPosition="right"
+        label="งาน (มหาวิทยาลัย)"
+        placeholder="เลือกประเภทโครงการ"
+        data={[
+          { value: "development", label: "โครงการพัฒนา" },
+          { value: "maintenance", label: "โครงการบำรุงรักษา" },
+          { value: "research", label: "โครงการวิจัย" },
+          { value: "other", label: "อื่นๆ" },
+        ]}
+        {...form.getInputProps("projectType")}
+        required
+      />
+
+        <Grid>
+          <Grid.Col span={6}>
+            <Select
+              allowDeselect={false}
+              clearable
+              checkIconPosition="right"
+              label="งาน (มหาวิทยาลัย)"
+              placeholder="เลือกประเภทโครงการ"
+              data={[
+                { value: "development", label: "โครงการพัฒนา" },
+                { value: "maintenance", label: "โครงการบำรุงรักษา" },
+                { value: "research", label: "โครงการวิจัย" },
+                { value: "other", label: "อื่นๆ" },
+              ]}
+              {...form.getInputProps("projectType")}
+              required
+            />
+          </Grid.Col>
+          <Grid.Col span={6}>
+            <Select
+              allowDeselect={false}
+              clearable
+              checkIconPosition="right"
+              label="งาน (มหาวิทยาลัย)"
+              placeholder="เลือกประเภทโครงการ"
+              data={[
+                { value: "development", label: "โครงการพัฒนา" },
+                { value: "maintenance", label: "โครงการบำรุงรักษา" },
+                { value: "research", label: "โครงการวิจัย" },
+                { value: "other", label: "อื่นๆ" },
+              ]}
+              {...form.getInputProps("projectType")}
+              required
+            />
+          </Grid.Col>
+        </Grid>
 
       <Textarea
         label="รายละเอียดโครงการ"
@@ -33,7 +111,7 @@ export const BasicInfoStep: React.FC<BasicInfoStepProps> = ({ form }) => {
         label="ประเภทโครงการ"
         placeholder="เลือกประเภทโครงการ"
         data={[
-          { value: "development", label: "โครงการพัฒนาkkkkk" },
+          { value: "development", label: "โครงการพัฒนา" },
           { value: "maintenance", label: "โครงการบำรุงรักษา" },
           { value: "research", label: "โครงการวิจัย" },
           { value: "other", label: "อื่นๆ" },

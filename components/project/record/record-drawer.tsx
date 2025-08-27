@@ -48,7 +48,7 @@ export const RecordDrawer = ({ title, opened, onClose, ...other }: Props) => {
     onSubmit: async (values: any) => {
       console.log("Form submitted:", values);
       onClose();
-    },
+    }
   };
 
   return (
@@ -88,7 +88,11 @@ const DrawerContent = ({ title }: { title: React.ReactNode }) => {
   return (
     <Box className="flex flex-col h-screen">
       {/* HEADER */}
-      <Drawer.Header className="border-b border-gray-200">
+      <Drawer.Header 
+        className="border-b border-gray-200"
+        px={34}
+        py={10}
+      >
         <Drawer.Title>{title}</Drawer.Title>
         <Drawer.CloseButton
           children={<p className="underline text-blue-500">ปิด</p>}
@@ -97,19 +101,24 @@ const DrawerContent = ({ title }: { title: React.ReactNode }) => {
       </Drawer.Header>
 
       {/* BODY */}
-      <Drawer.Body className="flex-1" p={25} component={ScrollArea}>
+      <Drawer.Body 
+        className="flex-1"
+        px={34}
+        py={10} 
+        component={ScrollArea}
+      >
         <FormStep step={currentStepConfig} />
       </Drawer.Body>
 
       {/* FOOTER */}
       <Box
         className="border-t border-gray-200"
-        px={11}
-        py={12}
+        px={34}
+        py={10}
         bg={"light-dark(white, #242424)"}
       >
         <Flex justify={"space-between"} align={"center"}>
-          <span>
+          <span className="text-sm">
             หน้า {currentStep + 1} จาก {totalSteps} หน้า{" "}
             <span className="text-blue-500">ของ บันทึกโครงการ</span>
           </span>
