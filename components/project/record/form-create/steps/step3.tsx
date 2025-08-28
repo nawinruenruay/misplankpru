@@ -1,8 +1,19 @@
 "use client";
 
 import React from "react";
-import { Table, Button, Flex, Modal, Drawer } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import {
+  Table,
+  Button,
+  Flex,
+  Modal,
+  Dialog,
+  Textarea,
+  TextInput,
+  Stack,
+  Text,
+  Group,
+} from "@mantine/core";
+import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { UseFormReturnType } from "@mantine/form";
 
 interface Step3Props {
@@ -11,6 +22,7 @@ interface Step3Props {
 
 export const Step3: React.FC<Step3Props> = ({ form }) => {
   const [opened, { open, close }] = useDisclosure(false);
+  const isTablet = useMediaQuery("(max-width: 1300px)");
 
   return (
     <div className="space-y-4">
@@ -42,9 +54,35 @@ export const Step3: React.FC<Step3Props> = ({ form }) => {
         </Table.Tbody>
       </Table>
 
-      <Drawer opened={opened} onClose={close} title="Authentication">
-        {/* Drawer content */}
-      </Drawer>
+      <Dialog
+        opened={opened}
+        onClose={close}
+        withCloseButton
+        size="lg"
+        radius="md"
+        transitionProps={{ transition: "pop" }}
+        position={isTablet ? { bottom: 0, left: 0 } : { bottom: 0, left: 200 }}
+      >
+        <Text size="sm" mb="xs" fw={500}>
+          Title
+        </Text>
+        <Stack gap={5}>
+          <TextInput
+            label="ตัวชี้วัดความสำเร็จ"
+            placeholder="ระบุตัวชี้วัดความสำเร็จ"
+          />
+          <TextInput label="จำนวนเป้าหมาย" placeholder="ระบุจำนวนเป้าหมาย" />
+          <TextInput label="หน่วยนับ" placeholder="ระบุหน่วยนับ" />
+        </Stack>
+        <Group align={"center"} justify={"center"} mt={10}>
+          <Button variant="outline" color="red" onClick={close}>
+            ยกเลิก
+          </Button>
+          <Button variant="filled" color="blue" onClick={close}>
+            บันทึก
+          </Button>
+        </Group>
+      </Dialog>
     </div>
   );
 };
