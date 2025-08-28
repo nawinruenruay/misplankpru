@@ -11,6 +11,7 @@ import {
   Tooltip,
 } from "@mantine/core";
 import { IconMoon, IconSun } from "@tabler/icons-react";
+
 import cx from "clsx";
 import classes from "./header.module.css";
 
@@ -36,9 +37,8 @@ export default function Header({ openedMobile, toggleMobile }: HeaderProps) {
             size="sm"
           />
           <Flex gap={10} visibleFrom={"xs"} align={"center"}>
-            <Text size="md" fw={600}>
-              growbudget
-            </Text>
+            <img src="/img/logo2.svg" alt="MIS Logo" style={{ height: "40px" }} />
+            <Text size="35px" fw={600} c="light-dark(#122B45, #f9f9f9)"> MIS </Text>
           </Flex>
         </Group>
         <Group gap={20}>

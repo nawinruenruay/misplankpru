@@ -1,30 +1,27 @@
 import { FormStep } from "@/types/form";
-import { BasicInfoStep } from "./steps/basic-info-step";
-import { TimelineStep } from "./steps/timeline-step";
-import { AdditionalInfoStep } from "./steps/additional-info-step";
+import { Step1 } from "./steps/step1";
+import { Step2 } from "./steps/step2";
+import { Step3 } from "./steps/step3";
 import {
-  basicInfoValidation,
-  timelineValidation,
-  additionalInfoValidation,
+  Step1Validation,
+  Step2Validation,
+  Step3Validation,
 } from "./validations";
 
 export const projectFormSteps: FormStep[] = [
   {
-    id: "basic-info",
-    title: "ข้อมูลพื้นฐาน",
-    component: BasicInfoStep,
-    validate: basicInfoValidation,
+    id: "Step1",
+    component: Step1,
+    validate: Step1Validation,
   },
   {
-    id: "timeline",
-    title: "ระยะเวลาและผู้รับผิดชอบ",
-    component: TimelineStep,
-    validate: timelineValidation,
+    id: "Step2",
+    component: Step2,
+    validate: Step2Validation,
   },
-  {
-    id: "additional-info",
-    title: "ข้อมูลเพิ่มเติม",
-    component: AdditionalInfoStep,
-    validate: additionalInfoValidation,
+    {
+    id: "Step3",
+    component: Step3,
+    validate: Step3Validation,
   },
 ];
