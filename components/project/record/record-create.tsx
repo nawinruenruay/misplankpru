@@ -27,7 +27,7 @@ export const RecordCreate = () => {
         closeOnClickOutside={false}
         closeOnEscape={false}
         position={"right"}
-        size={"60rem"}
+        size={"60%"}
       />
     </>
   );

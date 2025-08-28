@@ -2,7 +2,7 @@ import { UseFormReturnType } from "@mantine/form";
 
 export interface FormStep {
   id: string;
-  title: string;
+  // title: string;
   component: React.ComponentType<any>;
   validate?: Record<string, (value: any) => string | null>;
 }
